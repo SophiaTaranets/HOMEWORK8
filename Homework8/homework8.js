@@ -1,0 +1,80 @@
+// **************** Task1 **************** 
+    function checkRegistr(str){
+        const regExp = /^[A-Z]$/;
+        const res = regExp.test(str[0]);
+        if (res){
+            console.log("String starts with uppercase character ");
+        } else {
+            console.log("String doesn`t start with uppercase character ");
+        }
+    }
+    checkRegistr('regexp');
+    checkRegistr('RegExp');
+    checkRegistr('tegExp');
+    checkRegistr('Rei');
+
+// **************** Task2 **************** 
+
+function checkEmail (email){
+    const regularExp = /\S+@\S+\.\S+/;
+    console.log(regularExp.test(email));
+}
+checkEmail("Qmail2@gmail.com");
+
+// **************** Task3 **************** 
+
+const myRe = /d(b+)(d)/i;
+const myList = myRe.exec("cdbBdbsbz");
+console.log(myList);
+
+// **************** Task4 **************** 
+
+const reg = /(\w+)\s(\w+)/;
+const string = "Java Script";
+const newString = string.replace(reg,"$2, $1");
+console.log(newString);
+
+
+// **************** Task5 **************** 
+
+function checkBankCard(str){
+    const reExp = /^\d{4}-\d{4}-\d{4}-\d{4}$/;
+    const res = reExp.test(str);
+    if (res){
+        console.log("Validation succsesful!!");
+    } else {
+        console.log("Please, try again. Incorrect data input");
+    }
+}
+checkBankCard('1234-5678-9101-1213');
+checkBankCard('1234-5678c-9101-1213');
+checkBankCard('12342-5678-9101-1213');
+
+// **************** Task6 ****************
+
+function checkEmail_(emeil_){
+    const mailPattern = /^[a-zA-z0-9]+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/;
+    if(mailPattern.test(emeil_)){
+        console.log("email is correct!");
+    }
+    else{
+        console.log("email is NOT correct!");
+    }
+} 
+checkEmail_('my_mail@gmail.com');
+checkEmail_('#my_mail@gmail.com');
+checkEmail_('my_ma--il@gmail.com');
+
+// **************** Task7 ****************
+
+function checkLogin(login){
+    const re = /^[a-zA-Z]{1}[a-zA-z0-9\.]{1,9}$/;
+    const reqNumber = /[0-9\.]+/g;
+    const resultNumber = login.match(reqNumber);
+    const result = re.test(login);
+    console.log(`${login} is ${result}-${resultNumber}`);
+}
+
+checkLogin('ee1.1ret3');
+checkLogin('ee1*1ret3');
+
